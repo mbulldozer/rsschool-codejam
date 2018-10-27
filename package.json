@@ -1,0 +1,24 @@
+{
+  "name": "rsschool-codejam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbulldozer/rsschool-codejam.git"
+  },
+  "author": "mbulldozer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbulldozer/rsschool-codejam/issues"
+  },
+  "homepage": "https://github.com/mbulldozer/rsschool-codejam#readme",
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "mocha": "^5.2.0"
+  }
+}
