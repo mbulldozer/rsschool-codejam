@@ -1,7 +1,4 @@
 module.exports = function sumOfOther(array) {
-  let sum = 0;
-  for(let item of array){
-    sum += item;
-  }
+  const sum = array.reduce((acc, item) => acc + item, 0);
   return array.map(item => sum - item);
-}
+};
