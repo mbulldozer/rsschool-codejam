@@ -1,10 +1,17 @@
 const assert = require('assert');
+
 Object.freeze(assert);
 const sumOfOther = require('./src/sumOfOther.js');
 const make = require('./src/make.js');
+const recursion = require('./src/recursion.js');
+
 const sum = (a, b) => a + b;
-const pow = (a, b) => Math.pow(a, b);
+const pow = (a, b) => a ** b;
 const max = (a, b) => Math.max(a, b);
+
+const treeOne = { value: 100, left: { value: 90, left: { value: 70 }, right: { value: 99 } }, right: { value: 120, left: { value: 110 }, right: { value: 130 } } };
+const treeTwo = { value: 150, left: { value: 120, left: { value: 100 } }, right: { value: 170, right: { value: 200 } } };
+const treeThree = { value: 200, left: { value: 100 }, right: { value: 300 } };
 
 describe('sumOfOther', () => {
   it('1', () => {
@@ -33,5 +40,20 @@ describe('make', () => {
   it('3', () => {
     const rez = make(221)(3, 42, 424)(625)(34, 424, 525, 32)(42)(max);
     assert.deepEqual(rez, 625);
+  });
+});
+
+describe('recursion', () => {
+  it('1', () => {
+    const rez = recursion(treeOne);
+    assert.deepEqual(rez, [[100], [90, 120], [70, 99, 110, 130]]);
+  });
+  it('2', () => {
+    const rez = recursion(treeTwo);
+    assert.deepEqual(rez, [[150], [120, 170], [100, 200]]);
+  });
+  it('3', () => {
+    const rez = recursion(treeThree);
+    assert.deepEqual(rez, [[200], [100, 300]]);
   });
 });
